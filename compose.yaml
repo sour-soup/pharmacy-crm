@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:17.1-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_USER: soup
+      POSTGRES_PASSWORD: soup
+      POSTGRES_DB: pharmacy-crm
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq_container
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: soup
+      RABBITMQ_DEFAULT_PASS: soup
+
+volumes:
+  postgres_data:
+
