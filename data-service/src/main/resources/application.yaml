@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: data-service
+
+  datasource:
+    password: soup
+    username: soup
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/pharmacy-crm
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: soup
+    password: soup
+    virtual-host: /
+
+server:
+  port: 8081
