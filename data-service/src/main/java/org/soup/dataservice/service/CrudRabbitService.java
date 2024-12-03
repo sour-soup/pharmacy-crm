@@ -32,6 +32,6 @@ public abstract class CrudRabbitService<
     protected String delete(EntityDto entityDto) {
         Entity entity = mapper.toEntity(entityDto);
         repository.deleteById(entity.getId());
-        return "Successfully deleted";
+        return "Deleted";
     }
 }

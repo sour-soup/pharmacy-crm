@@ -19,8 +19,17 @@ public class OrderItemService extends CrudRabbitService<
     }
 
     @Override
-    @RabbitListener(queues = "orderitem.queue")
+    @RabbitListener(queues = "order-item.queue")
     public String handleMessage(OrderItemDto orderItemDto, String routingKey) {
-        return "";
+        try {
+            return switch (routingKey) {
+                case "create" -> create(orderItemDto);
+                case "update" -> update(orderItemDto);
+                case "delete" -> delete(orderItemDto);
+                default -> throw new IllegalArgumentException("Unsupported operation: " + routingKey);
+            };
+        } catch (Exception e) {
+            return e.getMessage();
+        }
     }
 }
