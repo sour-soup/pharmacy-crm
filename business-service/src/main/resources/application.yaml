@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: business-service
+
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: soup
+    password: soup
+    virtual-host: /
+
+server:
+  port: 8080
+
+data-service:
+  url: http://localhost:8081
+
+springdoc:
+  swagger-ui:
+    path: /
