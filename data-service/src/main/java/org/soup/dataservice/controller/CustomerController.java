@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/customers")
+@RequestMapping("/api/customers/")
 public class CustomerController extends DetailsController<Customer, CustomerRepository> {
     public CustomerController(CustomerRepository repository) {
         super(repository);
