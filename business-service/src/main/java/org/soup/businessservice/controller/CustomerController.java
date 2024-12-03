@@ -1,7 +1,7 @@
 package org.soup.businessservice.controller;
 
 import org.soup.common.models.CustomerDto;
-import org.soup.businessservice.dto.CustomerCreateRequest;
+import org.soup.businessservice.requests.CustomerCreateRequest;
 import org.soup.businessservice.mapper.CustomerCreateMapper;
 import org.soup.businessservice.service.CrudService;
 import org.springframework.web.bind.annotation.RequestMapping;
