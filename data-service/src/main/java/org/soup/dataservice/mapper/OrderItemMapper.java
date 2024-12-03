@@ -9,8 +9,8 @@ import org.soup.dataservice.entity.OrderItem;
 @Mapper(unmappedTargetPolicy = ReportingPolicy.IGNORE, componentModel = MappingConstants.ComponentModel.SPRING)
 public interface OrderItemMapper extends DtoMapper<OrderItem, OrderItemDto> {
     @Override
-    @Mapping(source = "medicineId", target = "medicine.id")
-    @Mapping(source = "orderId", target = "orderDto.id")
+    @Mapping(source = "medicine.id", target = "medicineId")
+    @Mapping(source = "order.id", target = "orderId")
     OrderItemDto toDto(OrderItem OrderItem);
 
     @Override
@@ -21,7 +21,7 @@ public interface OrderItemMapper extends DtoMapper<OrderItem, OrderItemDto> {
     @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
     @Mapping(source = "medicineId", target = "medicine")
     @Mapping(source = "orderId", target = "order")
-    OrderItem partialUpdate(@MappingTarget OrderItemDto OrderItemDto, OrderItem orderItemDto1);
+    OrderItem partialUpdate(OrderItemDto OrderItemDto, @MappingTarget OrderItem orderItemDto1);
 
     default Order createOrder(Long orderId) {
         if (orderId == null) {
