@@ -1,4 +1,4 @@
-package org.soup.dataservice.mappers;
+package org.soup.dataservice.mapper;
 
 import org.mapstruct.*;
 

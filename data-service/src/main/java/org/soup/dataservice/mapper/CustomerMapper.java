@@ -1,7 +1,7 @@
-package org.soup.dataservice.mappers;
+package org.soup.dataservice.mapper;
 
 
-import models.CustomerDto;
+import org.soup.common.models.CustomerDto;
 import org.mapstruct.Mapper;
 import org.mapstruct.MappingConstants;
 import org.mapstruct.ReportingPolicy;
