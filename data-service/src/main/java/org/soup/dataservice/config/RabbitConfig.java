@@ -14,8 +14,6 @@ import org.springframework.context.annotation.Configuration;
 @EnableRabbit
 @Configuration
 public class RabbitConfig {
-    public static final String CUSTOMER = "customer";
-
     @Bean
     public Jackson2JsonMessageConverter jackson2JsonMessageConverter() {
         return new Jackson2JsonMessageConverter();
@@ -31,12 +29,12 @@ public class RabbitConfig {
 
     @Bean
     public DirectExchange customerExchange() {
-        return new DirectExchange(CUSTOMER + ".exchange", true, false);
+        return new DirectExchange("customer.exchange", true, false);
     }
 
     @Bean
     public Queue customerQueue() {
-        return new Queue(CUSTOMER + ".queue", true, false, false);
+        return new Queue("customer.queue", true, false, false);
     }
 
     @Bean
