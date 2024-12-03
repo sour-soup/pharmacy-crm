@@ -153,12 +153,12 @@ public class RabbitConfig {
     // OrderItem
     @Bean
     public DirectExchange orderItemExchange() {
-        return new DirectExchange("orderitem.exchange", true, false);
+        return new DirectExchange("order-item.exchange", true, false);
     }
 
     @Bean
     public Queue orderItemQueue() {
-        return new Queue("orderitem.queue", true, false, false);
+        return new Queue("order-item.queue", true, false, false);
     }
 
     @Bean

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/orderitems")
+@RequestMapping("/api/order-items")
 public class OrderItemController extends DetailsController<OrderItem, OrderItemRepository> {
     public OrderItemController(OrderItemRepository repository) {
         super(repository);

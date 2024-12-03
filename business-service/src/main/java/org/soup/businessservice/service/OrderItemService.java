@@ -34,18 +34,18 @@ public class OrderItemService implements CrudService<OrderItemDto> {
 
     @Override
     public String create(OrderItemDto orderItem) {
-        return (String) rabbitTemplate.convertSendAndReceive("orderitem.exchange", "create", orderItem);
+        return (String) rabbitTemplate.convertSendAndReceive("order-item.exchange", "create", orderItem);
     }
 
     @Override
     public String update(OrderItemDto orderItemDto) {
-        return (String) rabbitTemplate.convertSendAndReceive("orderitem.exchange", "update", orderItemDto);
+        return (String) rabbitTemplate.convertSendAndReceive("order-item.exchange", "update", orderItemDto);
     }
 
     @Override
     public String delete(Long id) {
         OrderItemDto orderItem = new OrderItemDto(id, null, null, null, null);
-        return (String) rabbitTemplate.convertSendAndReceive("orderitem.exchange", "delete", orderItem);
+        return (String) rabbitTemplate.convertSendAndReceive("order-item.exchange", "delete", orderItem);
     }
 }
 
